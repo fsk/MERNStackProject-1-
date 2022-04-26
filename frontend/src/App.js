@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Navigate, Route } from 'react-router-d
 import Users from './users/pages/Users';
 import NewPlace from './places/pages/NewPlace';
 import MainNavigation from './shared/Components/Navigation/MainNavigation';
+import UserPlaces from './places/pages/UserPlaces';
 
 
 
@@ -15,7 +16,8 @@ const App = () => {
       <main>
         <Routes>
           <Route path='/' element={<Users />}></Route>
-          <Route path='/places/new' element={<NewPlace />}></Route>
+          <Route path='/:userId/places' element={<UserPlaces />}></Route>
+          <Route path='/places/new' index element={<NewPlace />}></Route>
           <Route path='*' element={<Navigate to={"/"} replace />} />
         </Routes>
       </main>
